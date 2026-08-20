@@ -1,0 +1,17 @@
+services:
+
+  backend:
+    image: gemini-chat-backend:latest
+    container_name: gemini-chat-backend
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+
+  frontend:
+    image: gemini-chat-frontend:latest
+    container_name: gemini-chat-frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
