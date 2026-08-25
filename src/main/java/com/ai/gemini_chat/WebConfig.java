@@ -11,7 +11,8 @@ public class WebConfig implements WebFluxConfigurer {
     public void addCorsMappings(CorsRegistry registry) {
 
         registry.addMapping("/**")
-                .allowedOrigins("https://gemini-chat-mxsh.onrender.com")
+                .allowedOrigins("https://gemini-chat-mxsh.onrender.com",
+                "http://localhost:5173")
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
                 .allowCredentials(false);
